@@ -59,15 +59,15 @@ const App = () => {
           />
           <Route
             path="/signup"
-            element={<RestrictedRoute component={SignupPage} />}
+            element={<RestrictedRoute component={SignupPage} redirectTo="/home" />}
           />
           <Route
             path="/signin"
-            element={<RestrictedRoute component={SigninPage} />}
+            element={<RestrictedRoute component={SigninPage} redirectTo="/home" />}
           />
 
           <Route path="/" element={<PrivateRoute component={SharedLayout} />}>
-            <Route index element={<HomePage />} />
+            <Route path="home" element={<HomePage />} />
             <Route path="drinks" element={<DrinksPage />} />
             <Route path="add" element={<AddDrinkPage />} />
             <Route path="favorites" element={<FavoriteDrinksPage />} />
